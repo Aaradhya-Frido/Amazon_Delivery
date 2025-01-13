@@ -6,19 +6,19 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from bs4 import BeautifulSoup
-from io import StringIO
+import chromedriver_autoinstaller 
 
-# Automatically install the correct version of chromedriver
-chromedriver_autoinstaller.install()
+# # Automatically install the correct version of chromedriver
+# chromedriver_autoinstaller.install()
 
-# Set up Chrome options for headless browser
-chrome_options = Options()
-chrome_options.add_argument("--headless")  # Optional: run in headless mode (no browser UI)
-chrome_options.add_argument("--disable-gpu")  # To avoid issues on some systems
-chrome_options.add_argument("--no-sandbox")  # To avoid issues on some systems
+# # Set up Chrome options for headless browser
+# chrome_options = Options()
+# chrome_options.add_argument("--headless")  # Optional: run in headless mode (no browser UI)
+# chrome_options.add_argument("--disable-gpu")  # To avoid issues on some systems
+# chrome_options.add_argument("--no-sandbox")  # To avoid issues on some systems
 
-# Initialize WebDriver
-driver = webdriver.Chrome(options=chrome_options)
+# # Initialize WebDriver
+# driver = webdriver.Chrome(options=chrome_options)
 
 # Function to load Excel file into a list (considering headers)
 def load_excel(file, column_name):
@@ -83,9 +83,9 @@ def main():
         # Set up Selenium WebDriver
         chrome_options = Options()
         chrome_options.add_argument("--headless")  # Optional: run in headless mode (no browser UI)
-        service = Service(chrome_driver_path)
-        driver = webdriver.Chrome(service=service, options=chrome_options)
-
+        # service = Service(chrome_driver_path)
+        # driver = webdriver.Chrome(service=service, options=chrome_options)
+        driver = webdriver.Chrome(options=chrome_options)
         # Output results
         results = []
 
