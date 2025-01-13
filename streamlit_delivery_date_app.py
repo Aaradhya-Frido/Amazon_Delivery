@@ -8,8 +8,17 @@ from selenium.webdriver.common.by import By
 from bs4 import BeautifulSoup
 from io import StringIO
 
-# Set up the path to your ChromeDriver
-chrome_driver_path = "chromedriver-win64\\chromedriver.exe"  # Replace with the path to your ChromeDriver
+# Automatically install the correct version of chromedriver
+chromedriver_autoinstaller.install()
+
+# Set up Chrome options for headless browser
+chrome_options = Options()
+chrome_options.add_argument("--headless")  # Optional: run in headless mode (no browser UI)
+chrome_options.add_argument("--disable-gpu")  # To avoid issues on some systems
+chrome_options.add_argument("--no-sandbox")  # To avoid issues on some systems
+
+# Initialize WebDriver
+driver = webdriver.Chrome(options=chrome_options)
 
 # Function to load Excel file into a list (considering headers)
 def load_excel(file, column_name):
