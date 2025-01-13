@@ -82,9 +82,9 @@ def main():
 
         # Set up Selenium WebDriver
         chrome_options = Options()
-        chrome_options.add_argument("--headless")  # Optional: run in headless mode (no browser UI)
-        # service = Service(chrome_driver_path)
-        # driver = webdriver.Chrome(service=service, options=chrome_options)
+        chrome_options.add_argument("--headless")  # Ensure headless mode (no GUI)
+        chrome_options.add_argument("--disable-gpu")  # Disable GPU hardware acceleration (important for headless)
+        chrome_options.add_argument("--no-sandbox")
         driver = webdriver.Chrome(options=chrome_options)
         # Output results
         results = []
