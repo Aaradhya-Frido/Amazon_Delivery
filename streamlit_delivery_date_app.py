@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 from io import StringIO
 
 # Set up the path to your ChromeDriver
-chrome_driver_path = "chromedriver-win64/chromedriver.exe"  # Replace with the path to your ChromeDriver
+chrome_driver_path = "chromedriver-win64\\chromedriver.exe"  # Replace with the path to your ChromeDriver
 
 # Function to load Excel file into a list (considering headers)
 def load_excel(file, column_name):
